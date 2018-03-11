@@ -18,8 +18,8 @@ from myblog import views as myblog_views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^index$',myblog_views.index),
-    url(r'^login$',myblog_views.login),
-    url(r'^redic',myblog_views.redic),
-    url(r'^$',myblog_views.xiecheng),
+    url(r'^$',myblog_views.index,name="index"),
+    url(r'^fuli$',myblog_views.fuli,name="fuli"),
+    url(r'^movie$',myblog_views.movie,name="movie"),
+    url(r'^more$',myblog_views.more,name="more"),
 ]

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}首页{% endblock %}
+
+{% block content %}
+
+
+<div id="information">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="container-fluid" style="padding:0;">
+
+                    {% for each in articles %}
+
+                        <div class="row info-content">
+						<div class="col-md-5 col-sm-5 col-xs-5">
+							<img src="/static/{{ each.head_img }}" class="img-responsive" alt="">
+						</div>
+						<div class="col-md-7 col-sm-7 col-xs-7">
+							<h4>{{ each.title }}</h4>
+							<p class="hidden-xs">{{ each.summary }}</p>
+                            <div class="article-attr">
+                                    <ul  class="list-inline">
+                                        <li>小编：{{ each.author.name }}</li>
+                                        <li>发表时间：{{ each.publish_date }}</li>
+                                        <li>点赞：{{ each.thumbup_set.select_related.count }}</li>
+                                        <li>评论：{{ each.comment_set.select_related.count }}</li>
+                                    </ul>
+                                </div>
+						</div>
+					</div>
+                    {% endfor %}
+
+				</div>
+			</div>
+
+
+			<div class="col-md-4 info-right hidden-xs hidden-sm">
+				<blockquote>
+					<h2>热点</h2>
+				</blockquote>
+				<div class="container-fluid">
+
+
+
+					<div class="row">
+						<div class="col-md-5 col-sm-5 col-xs-5" style="margin: 12px 0; padding: 0">
+							<img src="img/info3.jpg" class="img-responsive" alt="">
+						</div>
+						<div class="col-md-7 col-sm-7 col-xs-7" style="padding-right: 0">
+							<h4>六家互联网公司发声明 抵制流量劫持等违法行为</h4>
+							<p>admin 15 / 10 / 11</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+
+
+
