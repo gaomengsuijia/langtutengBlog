@@ -14,7 +14,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from myblog import views as myblog_views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^index$',myblog_views.index),
+    url(r'^login$',myblog_views.login),
+    url(r'^redic',myblog_views.redic),
+    url(r'^$',myblog_views.xiecheng),
 ]
