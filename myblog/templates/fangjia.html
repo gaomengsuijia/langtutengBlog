@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}房价{% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="/static/css/img.css">
+
+
+{% endblock %}
+{% block content %}
+<script type="text/javascript" src="/static/js/ichart.1.2.1.min.js"></script>
+<script>
+//接收服务器的数据
+    var citydata = {{ data|safe }};
+   // console.log(citydata);
+    var da = [];
+    var color = ['#a5c2d5','#cbab4f','#76a871','#a56f8f','#c12c44','#a56f8f','#9f7961','#76a871','#6f83a5']
+    for (i in citydata){
+        var info = {};
+        info.name = citydata[i].cityname
+        info.value = citydata[i].fanjia
+        info.color = color[Math.round(Math.random()*(color.length-1))]
+        //console.log(info)
+        //console.log(citydata[i])
+        da.push(info)
+    }
+    //console.log(da)
+//定义数据
+/*
+	var data = [
+		{name : 'H',value : 7,color:'#a5c2d5'},
+	   	{name : 'E',value : 5,color:'#cbab4f'},
+	   	{name : 'L',value : 12,color:'#76a871'},
+	   	{name : 'L',value : 12,color:'#76a871'},
+	   	{name : 'O',value : 15,color:'#a56f8f'},
+	   	{name : 'W',value : 13,color:'#c12c44'},
+	   	{name : 'O',value : 15,color:'#a56f8f'},
+	   	{name : 'R',value : 18,color:'#9f7961'},
+	   	{name : 'L',value : 12,color:'#76a871'},
+	   	{name : 'D',value : 4,color:'#6f83a5'}
+	 ];*/
+	 $(function(){
+		var chart = new iChart.Column2D({
+			render : 'canvasDiv',//渲染的Dom目标,canvasDiv为Dom的ID
+			data: da,//绑定数据
+			title : '全国房价走势',//设置标题
+			width : 1800,//设置宽度，默认单位为px
+			height : 800,//设置高度，默认单位为px
+			shadow:true,//激活阴影
+			shadow_color:'#c7c7c7',//设置阴影颜色
+			coordinate:{//配置自定义坐标轴
+				scale:[{//配置自定义值轴
+					 position:'left',//配置左值轴
+					 start_scale:1000,//设置开始刻度为0
+					 end_scale:100000,//设置结束刻度为26
+					 scale_space:2000,//设置刻度间距
+					 listeners:{//配置事件
+						parseText:function(t,x,y){//设置解析值轴文本
+							return {text:t+" 元/m2"}
+						}
+					}
+				}]
+			}
+		});
+		//调用绘图方法开始绘图
+		chart.draw();
+	});
+</script>
+	//Html代码
+	<div id='canvasDiv'></div>
+{% endblock %}
+

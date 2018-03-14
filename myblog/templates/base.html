@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/coustomer.css">
+    {% block link %}{% endblock %}
 </head>
 <body>
 
@@ -24,6 +25,7 @@
                     <li class="active"><a href="{% url 'index' %}"> 热点</a></li>
                     <li class=""><a href="{% url 'fuli' %}"> 福利</a></li>
                     <li class=""><a href="{% url 'movie' %}"> 电影排行榜</a></li>
+                    <li class=""><a href="{% url 'fangjia' %}"> 全国房价排行榜</a></li>
                     <li class=""><a href="{% url 'more' %}"> 敬请期待...</a></li>
 
 			</ul>

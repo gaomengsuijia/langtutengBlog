@@ -1,9 +1,28 @@
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse,HttpResponseRedirect
 import json
-from myblog.models import Article,Categroy
+from myblog.models import Article,Categroy,Fangjia
 # Create your views here.
 
+
+def fangjia(request):
+    '''
+    房价排行
+    :param request:
+    :return:
+    '''
+    fanjia = Fangjia.objects.all()
+    print(fanjia)
+    data = []
+    for each in fanjia:
+        info = {}
+        info["cityname"] = each.cityname
+        info["sara"] = each.sara
+        info["fanjia"] = each.fanjia
+        info["bili"] = each.bili
+        data.append(info)
+    return render(request,"fangjia.html",{"data":json.dumps(data)})
+    # return render(request, "fangjia.html")
 def more(request):
     '''
     更多

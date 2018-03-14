@@ -2,6 +2,20 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
+class Fangjia(models.Model):
+    '''
+    房价表
+    '''
+    cityname = models.CharField(max_length=50)
+    sara = models.CharField(max_length=50)
+    fanjia = models.CharField(max_length=50)
+    bili = models.FloatField(blank=True, null=True)
+
+    def __str__(self):
+        return self.cityname
+
+
+
 class UserGroup(models.Model):
     '''
     用户组

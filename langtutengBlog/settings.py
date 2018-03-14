@@ -82,11 +82,24 @@ WSGI_APPLICATION = 'langtutengBlog.wsgi.application'
 #     }
 # }
 
+
+#测试环境
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'USER':'xiaotu',
+#         'PASSWORD':'123456',
+#         'NAME':'langtutengblog',
+#         'HOST':'10.200.12.8',
+#     }
+# }
+
+# #生产环境
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'USER':'root',
-        'PASSWORD':'123456',
+        'PASSWORD':'hu2006615',
         'NAME':'langtutengblog',
         'HOST':'localhost',
     }
@@ -116,4 +129,5 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, ""),
+    os.path.join(BASE_DIR, "uploads"),
 )
