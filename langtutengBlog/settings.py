@@ -84,26 +84,26 @@ WSGI_APPLICATION = 'langtutengBlog.wsgi.application'
 
 
 #测试环境
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'USER':'xiaotu',
-#         'PASSWORD':'123456',
-#         'NAME':'langtutengblog',
-#         'HOST':'10.200.12.8',
-#     }
-# }
-
-# #生产环境
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'USER':'root',
-        'PASSWORD':'hu2006615',
+        'USER':'xiaotu',
+        'PASSWORD':'123456',
         'NAME':'langtutengblog',
-        'HOST':'localhost',
+        'HOST':'10.200.12.8',
     }
 }
+
+# #生产环境
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'USER':'root',
+#         'PASSWORD':'hu2006615',
+#         'NAME':'langtutengblog',
+#         'HOST':'localhost',
+#     }
+# }
 
 
 # Internationalization

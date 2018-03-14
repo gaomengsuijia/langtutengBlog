@@ -2,6 +2,12 @@
 
 {% block title %}首页{% endblock %}
 
+{% block link %}
+    <script src="/static/js/index.js"></script>
+
+{% endblock %}
+
+
 {% block content %}
 
 
@@ -18,13 +24,13 @@
 							<img src="/static/{{ each.head_img }}" class="img-responsive" alt="">
 						</div>
 						<div class="col-md-7 col-sm-7 col-xs-7">
-							<h4>{{ each.title }}</h4>
+							<h4><a href="{% url "article_detail"  each.id %}" target="_blank">{{ each.title }}</a></h4>
 							<p class="hidden-xs">{{ each.summary }}</p>
                             <div class="article-attr">
                                     <ul  class="list-inline">
                                         <li>小编：{{ each.author.name }}</li>
                                         <li>发表时间：{{ each.publish_date }}</li>
-                                        <li>点赞：{{ each.thumbup_set.select_related.count }}</li>
+                                        <li class="thumb"><a href="/api/thumb/{{ each.id }}">点赞</a>：{{ each.thumbup_set.select_related.count }}</li>
                                         <li>评论：{{ each.comment_set.select_related.count }}</li>
                                     </ul>
                                 </div>
@@ -43,16 +49,17 @@
 				<div class="container-fluid">
 
 
-
+                    {% for each in hot_articles %}
 					<div class="row">
 						<div class="col-md-5 col-sm-5 col-xs-5" style="margin: 12px 0; padding: 0">
-							<img src="img/info3.jpg" class="img-responsive" alt="">
+							<img src="/static/{{ each.head_img }}" class="img-responsive" alt="">
 						</div>
 						<div class="col-md-7 col-sm-7 col-xs-7" style="padding-right: 0">
-							<h4>六家互联网公司发声明 抵制流量劫持等违法行为</h4>
-							<p>admin 15 / 10 / 11</p>
+							<h4><a href="{% url "article_detail"  each.id %}" target="_blank">{{ each.title }}</a></h4>
+							<p>发表时间：{{ each.publish_date }}</p>
 						</div>
 					</div>
+                    {% endfor %}
 				</div>
 			</div>
 		</div>

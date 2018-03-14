@@ -81,7 +81,8 @@ class Article(models.Model):
     author = models.ForeignKey("UserProfile")
     publish_date = models.DateTimeField(auto_now=True)
     hidden = models.BooleanField()
-    priority = models.IntegerField()
+    priority = models.IntegerField()#权重
+    hot = models.BooleanField()#文章是否属于热点
 
 
 

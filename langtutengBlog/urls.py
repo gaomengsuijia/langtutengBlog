@@ -22,5 +22,7 @@ urlpatterns = [
     url(r'^fuli$',myblog_views.fuli,name="fuli"),
     url(r'^movie$',myblog_views.movie,name="movie"),
     url(r'^more$',myblog_views.more,name="more"),
-    url(r'^fangjia$',myblog_views.fangjia,name="fangjia")
+    url(r'^fangjia$',myblog_views.fangjia,name="fangjia"),
+    url(r'^article_detail/(\d+)$',myblog_views.article_detail,name="article_detail"),
+    url(r'^api/',include('myblog.urls',namespace='myblog')),#命名空间
     ]
