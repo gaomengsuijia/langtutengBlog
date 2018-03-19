@@ -18,6 +18,7 @@ from myblog import views as myblog_views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/login/$', myblog_views.index),
     url(r'^$',myblog_views.index,name="index"),
     url(r'^fuli$',myblog_views.fuli,name="fuli"),
     url(r'^movie$',myblog_views.movie,name="movie"),

@@ -131,3 +131,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, ""),
     os.path.join(BASE_DIR, "uploads"),
 )
+#未登录状态跳转页面
+LOGIN_URL=""

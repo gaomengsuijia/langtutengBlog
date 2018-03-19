@@ -3,6 +3,7 @@ from django.http import HttpResponse,JsonResponse,HttpResponseRedirect
 import json
 from myblog.models import Article,Categroy,Fangjia
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def article_detail(request,article_id):
@@ -52,7 +53,7 @@ def movie(request):
     '''
     return render(request,'movie.html')
 
-
+@login_required
 def fuli(request):
     '''
     福利版块
