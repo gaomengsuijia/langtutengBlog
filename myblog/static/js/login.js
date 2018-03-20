@@ -18,6 +18,8 @@ $(document).ready(function () {
                 console.log(res);
                 if(res.code==2001){
                     window.location.href="/";
+                }else {
+
                 }
             }
 
@@ -34,6 +36,8 @@ $(document).ready(function () {
                 console.log(res);
                 if(res.code==2001){
                     window.location.href="/";
+                }else{
+
                 }
             }
 

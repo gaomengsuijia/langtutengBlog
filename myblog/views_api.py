@@ -22,7 +22,7 @@ def login_check(request):
             try:
                 user = UserProfile.objects.get(username=username,password=password)
                 print(username, password)
-                request.session["userid"] = user.id#添加session
+                request.session["userid"] = {"userid":user.id,"name":user.name}#添加session
                 return JsonResponse({"code": 2001, "info": "login success"})
             except Exception as e:
                 return JsonResponse({"code": 4001, "info": "username or password erro"})
