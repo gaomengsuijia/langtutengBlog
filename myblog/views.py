@@ -6,6 +6,17 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+
+def login(request):
+    '''
+    登录页面
+    :param request:
+    :return:
+    '''
+    return render(request,"login.html")
+
+
+
 def article_detail(request,article_id):
     '''
     文章详情

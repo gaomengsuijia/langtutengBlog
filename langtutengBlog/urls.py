@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^more$',myblog_views.more,name="more"),
     url(r'^fangjia$',myblog_views.fangjia,name="fangjia"),
     url(r'^article_detail/(\d+)$',myblog_views.article_detail,name="article_detail"),
-    url(r'^api/',include('myblog.urls',namespace='myblog')),#命名空间
+    url(r'^api/',include('myblog.urls',namespace='myblog')),#命名空间,映射到下级app，myblog
+    url(r'^login$',myblog_views.login,name="login"),
     ]

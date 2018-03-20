@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}登录{% endblock %}
+{% block link %}
+
+
+{% endblock %}
+
+{% block content %}
+    <form id = "login_form" method="post">
+    <div class="form-group"> <label>登录名称</label>
+        <input type="text" name="username" id="username" class="form-control" placeholder="请输入登录名">
+    </div>
+    <div class="form-group"> <label>密码</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="请输入密码">
+    </div>
+    <input type="button" value="登录" id = "login" class="form-control">
+    </form>
+
+{% endblock %}
