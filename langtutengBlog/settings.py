@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'langtutengBlog.wsgi.application'
 # }
 
 
-#测试环境
+# #测试环境
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -95,7 +95,7 @@ DATABASES = {
     }
 }
 
-# #生产环境
+#生产环境
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',

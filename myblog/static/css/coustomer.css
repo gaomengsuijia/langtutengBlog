@@ -7,3 +7,7 @@
 #login_form{
     margin-top: 100px;
 }
+
+#logout:hover{
+    cursor: pointer;
+}

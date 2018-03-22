@@ -36,6 +36,7 @@ class UserProfile(models.Model):
     group = models.ManyToManyField("UserGroup")#一个用户可以属于多个用户组,django会自动生成一个中间表，进行关联
     password = models.CharField(max_length=15)
     email = models.CharField(max_length=50)
+    isdel = models.BooleanField()
 
     def __str__(self):
         return self.name

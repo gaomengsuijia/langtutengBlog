@@ -36,7 +36,7 @@
                 {% if not user_id %}
                     <li class=""><a href="{% url "login" %}"> 登录</a></li>
                 {% else %}
-                    <li class=""> <a>{{ user_id.name }}</a></li>
+                    <li class=""> <a>欢迎：{{ user_id.name }}</a></li>
                     <li class="" id="logout"><a>退出</a></li>
                 {% endif %}
 
