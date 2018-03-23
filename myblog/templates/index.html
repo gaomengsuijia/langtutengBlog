@@ -30,7 +30,10 @@
                                     <ul  class="list-inline">
                                         <li>小编：{{ each.author.name }}</li>
                                         <li>发表时间：{{ each.publish_date }}</li>
-                                        <li class="thumb"><a href="/api/thumb/{{ each.id }}">点赞</a>：{{ each.thumbup_set.select_related.count }}</li>
+                                        <li class="thumb">
+                                            <a href="#" onclick="thumb({{ each.id }});return false;">点赞</a>
+                                            <span class="thumb_num">：{{ each.thumbup_set.select_related.count }}<span>
+                                        </li>
                                         <li>评论：{{ each.comment_set.select_related.count }}</li>
                                     </ul>
                                 </div>

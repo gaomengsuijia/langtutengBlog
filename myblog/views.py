@@ -87,4 +87,5 @@ def index(request):
     #查询版块
     categroys = Categroy.objects.all()
     print(articles)
+    #查询文章的点赞数
     return render(request,'index.html',{'articles':articles,'categroys':categroys,'hot_articles':hot_articles})
