@@ -18,7 +18,7 @@ $(document).ready(function () {
                 console.log(res);
                 if(res.code==2001){
                     //保存cookie
-                    alert(res.userid);
+                    // alert(res.userid);
                     setCookie('userid', res.userid, { expires: 7 });
                     window.location.href="/";
                 }else if (res.code==4001){
