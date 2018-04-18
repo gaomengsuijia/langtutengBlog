@@ -3,8 +3,21 @@
  */
 
 
+
+
 $(document).ready(function () {
 
+    //注册
+
+    $("#regist").click(function () {
+        // alert("我要注册了");
+
+    })
+
+
+
+
+    //登录
 
     $("#login").click(function () {
         var username = $("#username").val();
@@ -30,7 +43,7 @@ $(document).ready(function () {
 
         })
     });
-
+//退出登录
     $("#logout").click(function () {
         // alert("ok")
         $.ajax({

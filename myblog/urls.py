@@ -6,5 +6,6 @@ from myblog import views_api
 urlpatterns = [
     url(r'^thumb$',views_api.thumb,name="thumb"),
     url(r'^login_check',views_api.login_check,name="login_check"),
+    url(r'register_check',views_api.register_check,name='register_check'),
     url(r'^logout',views_api.logout,name="logout"),
     ]
