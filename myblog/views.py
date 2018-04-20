@@ -8,6 +8,14 @@ from myblog.forms import Article_form
 from django.contrib.auth.models import User
 # Create your views here.
 
+def register(request):
+    '''
+    注册页面
+    :param request:
+    :return:
+    '''
+    return render(request,'register.html')
+
 
 def publish_article(request):
     '''

@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}注册{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    <form id = "login_form" method="post">
+        <div class="form-group">
+            <label>请输入昵称</label>
+            <input type="text" name="user" id="user" class="form-control" placeholder="请输入昵称">
+        </div>
+
+        <div class="form-group">
+            <label>请输入登录名</label>
+            <input type="text" name="username" id="username" class="form-control" placeholder="请输入登录名">
+        </div>
+
+        <div class="form-group">
+            <label>请输入邮箱</label>
+            <input type="text" name="email" id="email" class="form-control" placeholder="请输入邮箱">
+        </div>
+
+         <div class="form-group">
+            <label>密码</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="请输入密码">
+        </div>
+
+        <div class="form-group">
+            <label>再次确认密码</label>
+            <input type="password" name="comfirm_password" id="comfirm_password" class="form-control" placeholder="请再次输入相同的密码">
+        </div>
+
+
+        <p class = "errors"></p>
+        <input type="button" value="注册" id = "regist" class="form-control">
+    </form>
+{% endblock %}

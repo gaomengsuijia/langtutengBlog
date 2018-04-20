@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'langtutengBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'USER':'xiaotu',
-        'PASSWORD':'123456',
+        'USER':'root',
+        'PASSWORD':'hu2006615',
         'NAME':'langtutengblog',
-        'HOST':'10.200.12.8',
+        'HOST':'localhost',
     }
 }
 
@@ -110,8 +110,8 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'#后台设置为中文
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

@@ -8,6 +8,15 @@ from django.contrib.auth.decorators import login_required
 from datetime import datetime
 # Create your views here.
 
+def register_check(request):
+    '''
+    注册,post
+    :param request:
+    :return:
+    '''
+    pass
+
+
 def login_check(request):
     '''
     登录,post
