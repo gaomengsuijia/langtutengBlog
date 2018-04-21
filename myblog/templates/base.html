@@ -26,7 +26,7 @@
 		<div class="collapse navbar-collapse" id="navbar-collapse">
 			<ul class="nav navbar-nav navbar-right" id="na">
                     <li class="active"><a href="{% url 'index' %}"> 热点</a></li>
-                    <li class=""><a href="{% url 'fuli' %}"> 福利</a></li>
+                    <li class=""><a href="{% url 'wenda' %}"> 问答</a></li>
                     <li class=""><a href="{% url 'movie' %}"> 电影排行榜</a></li>
                     <li class=""><a href="{% url 'fangjia' %}"> 全国房价排行榜</a></li>
                     <li class=""><a href="{% url 'more' %}"> 敬请期待...</a></li>
@@ -114,6 +114,8 @@
 </script>
 
 {% block boot_script %}
+{% endblock %}
+{% block script %}
 {% endblock %}
 </body>
 </html>

@@ -6,6 +6,8 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from myblog.forms import Article_form
 from django.contrib.auth.models import User
+import requests
+import json
 # Create your views here.
 
 def register(request):
@@ -115,15 +117,21 @@ def movie(request):
     :param request:
     :return:
     '''
+    try:
+        res = requests.get(url="https://box.maoyan.com/promovie/api/box/second.json").text
+    except Exception as e:
+        raise Exception("数据获取失败")
+    # print(res)
+    return render(request, 'movie.html', {"data": json.loads(res)})
     return render(request,'movie.html')
 
-def fuli(request):
+def wenda(request):
     '''
     福利版块
     :param request:
     :return:
     '''
-    return render(request,'fuli.html')
+    return render(request,'wenda.html')
 
 
 def index(request):

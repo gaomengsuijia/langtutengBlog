@@ -20,24 +20,24 @@
                     {% for each in articles %}
 
                         <div class="row info-content">
-						<div class="col-md-5 col-sm-5 col-xs-5">
-							<img src="/static/{{ each.head_img }}" class="img-responsive" alt="">
-						</div>
-						<div class="col-md-7 col-sm-7 col-xs-7">
-							<h4><a href="{% url "article_detail"  each.id %}" target="_blank">{{ each.title }}</a></h4>
-							<p class="hidden-xs">{{ each.summary }}</p>
-                            <div class="article-attr">
-                                    <ul  class="list-inline">
-                                        <li>小编：{{ each.author.name }}</li>
-                                        <li>发表时间：{{ each.publish_date }}</li>
-                                        <li class="thumb">
-                                            <a href="#" onclick="thumb({{ each.id }});return false;">点赞</a>
-                                            <span class="thumb_num">：{{ each.thumbup_set.select_related.count }}<span>
-                                        </li>
-                                        <li>评论：{{ each.comment_set.select_related.count }}</li>
-                                    </ul>
-                                </div>
-						</div>
+                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                <img src="/static/{{ each.head_img }}" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-md-7 col-sm-7 col-xs-7">
+                                <h4><a href="{% url "article_detail"  each.id %}" target="_blank">{{ each.title }}</a></h4>
+                                <p class="hidden-xs">{{ each.summary }}</p>
+                                <div class="article-attr">
+                                        <ul  class="list-inline">
+                                            <li>小编：{{ each.author.name }}</li>
+                                            <li>发表时间：{{ each.publish_date }}</li>
+                                            <li class="thumb">
+                                                <a href="#" onclick="thumb({{ each.id }});return false;">点赞</a>
+                                                <span class="thumb_num">：{{ each.thumbup_set.select_related.count }}<span>
+                                            </li>
+                                            <li>评论：{{ each.comment_set.select_related.count }}</li>
+                                        </ul>
+                                    </div>
+                            </div>
 					</div>
                     {% endfor %}
 

@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/login/$', myblog_views.index),
     url(r'^$',myblog_views.index,name="index"),
-    url(r'^fuli$',myblog_views.fuli,name="fuli"),
+    url(r'^wenda$',myblog_views.wenda,name="wenda"),
     url(r'^movie$',myblog_views.movie,name="movie"),
     url(r'^more$',myblog_views.more,name="more"),
     url(r'^fangjia$',myblog_views.fangjia,name="fangjia"),
